@@ -98,12 +98,33 @@ function numeroMasGrande(numeros) {
   // "numeros" debe ser una matriz de enteros (int/integers)
   // Devuelve el número más grande
   // Tu código:
+  let mayor = 0;
+  for (let i = 0; i < numeros.length; i++) {
+    if (numeros[i] > mayor) {
+      mayor = numeros[i];
+    }
+  }
+  return mayor;
 }
+//* 1) una matriz de numero eneteros.
+//* 2) devolver el numero mas grande.
+//* - Como devolver un numero mas grande?
+//* - Hciendo un bucle que value el numero guardado en una variable y en esa comparación obtendre un numero mayor.
 
 function multiplicarArgumentos() {
   // Usa la palabra clave `arguments` para multiplicar todos los argumentos y devolver el producto
   // Si no se pasan argumentos devuelve 0. Si se pasa un argumento, simplemente devuélvelo
   // Escribe tu código aquí:
+  if (arguments.length < 1) {
+    return 0;
+  }
+
+  let multiplicarArguments = 1;
+
+  for (let i = 0; i < arguments.length; i++) {
+    multiplicarArguments *= arguments[i];
+  }
+  return multiplicarArguments;
 }
 
 function cuentoElementos(arreglo) {
