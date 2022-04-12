@@ -130,20 +130,45 @@ function multiplicarArgumentos() {
 function cuentoElementos(arreglo) {
   //Realiza una función que retorne la cantidad de los elementos del arreglo cuyo valor es mayor a 18.
   //Escribe tu código aquí
+  let cantElement = 0;
+  for (let i = 0; i < arreglo.length; i++) {
+    if (arreglo[i] > 18) {
+      cantElement++;
+    }
+  }
+  return cantElement;
 }
+//* Para que una función retorne la cantidad de los elementos se debe sumar cada posición.
+//* Como sumar cada posición?
+//* - creamos una variable que vaya sumando de a uno, si y solo si se cumple la condición de que array[i] > 18.
 
 function diaDeLaSemana(numeroDeDia) {
   //Suponga que los días de la semana se codifican como 1 = Domingo, 2 = Lunes y así sucesivamente.
   //Realiza una función que dado el número del día de la semana, retorne: Es fin de semana
   //si el día corresponde a Sábado o Domingo y “Es dia Laboral” en caso contrario.
   //Escribe tu código aquí
+  if (numeroDeDia === 1 || numeroDeDia === 7) {
+    return "Es fin de semana";
+  }
+  return "Es dia Laboral";
 }
 
 function empiezaConNueve(n) {
   //Desarrolle una función que recibe como parámetro un número entero n. Debe retornar true si el entero
   //inicia con 9 y false en otro caso.
   //Escribe tu código aquí
+  let num = n.toString();
+  if (num.charAt(0) === "9") {
+    return true;
+  }
+  return false;
 }
+
+//* Como calcular si un entero empieza con 9 en caso de ser mas de dos digitos?
+//* Podemos usar El charAt() método devuelve el carácter en el índice especificado de una 'CADENA'. El índice del primer carácter es 0, el segundo carácter es 1, y así sucesivamente.
+//* Pero como leimos indica que devuelve el caracteres de una CADENA, pero en este problema nos plantea devolver si un numero entero empieza con 9. ¿Entonces como podemos hacer?
+//* - Simple convertimos en String al numero entero, con el metodo toString().
+//* - Y ahora al tener una cadena de numeros, podemos devolver si el primero caracter empieza con '9'.
 
 function todosIguales(arreglo) {
   //Escriba la función todosIguales, que indique si todos los elementos de un arreglo son iguales:
