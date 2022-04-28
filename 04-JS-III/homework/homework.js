@@ -189,12 +189,41 @@ function mesesDelAño(array) {
   // "Enero", "Marzo" y "Noviembre", guardarlo en nuevo array y retornarlo.
   //Si alguno de los meses no está, devolver: "No se encontraron los meses pedidos"
   // Tu código:
+  let newArray = [];
+  if (
+    !array.includes("Enero") ||
+    !array.includes("Marzo") ||
+    !array.includes("Noviembre")
+  ) {
+    return "No se encontraron los meses pedidos";
+  }
+
+  for (i = 0; i < array.length; i++) {
+    if (
+      array[i] === "Enero" ||
+      array[i] === "Marzo" ||
+      array[i] === "Noviembre"
+    ) {
+      newArray.push(array[i]);
+    }
+  }
+  return newArray;
 }
+//* 1) Como recorrer un array  buscando los meses.
+//* 2) Como devolver esoss meses.
 
 function mayorACien(array) {
   //La función recibe un array con enteros entre 0 y 200. Recorrer el array y guardar en un nuevo array sólo los
   //valores mayores a 100 (no incluye el 100). Finalmente devolver el nuevo array.
   // Tu código:
+  let newArray = [];
+
+  for (i = 0; i < array.length; i++) {
+    if (array[i] > 100) {
+      newArray.push(array[i]);
+    }
+  }
+  return newArray;
 }
 
 function breakStatement(numero) {
@@ -205,7 +234,27 @@ function breakStatement(numero) {
   //devolver: "Se interrumpió la ejecución"
   //Pista: usá el statement 'break'
   // Tu código:
+  let newArray = [];
+  let sum = numero; //* Guardamos el numero en una variable suma
+  for (i = 0; i < 10; i++) {
+    sum += 2; //* Aumentamos en 2 el numero recibido.
+    if (sum === i) {
+      //* Acá comprobamos si el numero en la variable sum es igual a la cantidad de iteracciones.
+      break; //* En caso de ser TRUE debe ejecutarse el BREAK y salirse del Bucle.
+    } else {
+      newArray.push(sum); //* En caso contrario agregar el numero aumentado en 2 a la variable 'newArray'.
+    }
+  } //* Salida del FOR.
+
+  if (i < 10) {
+    //* Una vez que se salió del blucle por el BREAK, aplicamos un condicional para poder retornar
+    return "Se interrumpió la ejecución"; //* Lo que que nos planteamos. Para eso hacemos una comparación.
+  }
+  return newArray; //* Se ejecuta este Return si y solo si nunca se pudo encontrar una igualdad ente el
+  //* numero y la cantidad de iteracciones, entonces devolvemos el array.
 }
+
+//* como iterar en un bucle aumentanto en 2 el numero recibido hasta un limite de 10 veces.
 
 function continueStatement(numero) {
   //Iterar en un bucle aumentando en 2 el numero recibido hasta un límite de 10 veces.
@@ -214,6 +263,18 @@ function continueStatement(numero) {
   //Cuando el número de iteraciones alcance el valor 5, no se suma en ese caso y se continua con la siguiente iteración
   //Pista: usá el statement 'continue'
   // Tu código:
+  let newArray = [];
+  let sum = numero;
+  for (i = 0; i < 10; i++) {
+    if (i === 5) {
+      continue; //* Al alcanzar la iteración Numero 5, el se activa la directiva CONTINUE y eso hace
+    } else {
+      //* que se saletee esa suma y pase a la otra iteración y no se agregara en el ARRAY.
+      sum += 2;
+      newArray.push(sum);
+    }
+  }
+  return newArray; //* En este array se retoranaran 9 elementos, dado que en la iteración 5 se salteo por la directiva CONTINUE.
 }
 
 // No modificar nada debajo de esta línea
